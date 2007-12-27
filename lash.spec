@@ -1,12 +1,12 @@
 Summary:	LASH Audio Session Handler
 Summary(pl.UTF-8):	LASH Audio Session Handler - obsługa sesji dźwiękowych
 Name:		lash
-Version:	0.5.3
+Version:	0.5.4
 Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://download.savannah.gnu.org/releases/lash/%{name}-%{version}.tar.gz
-# Source0-md5:	a9ed9f839a191ba7fd4b376b9cb24f31
+# Source0-md5:	8eeb7e91f9127d7d9fc6ec076cbe14ed
 Patch0:		%{name}-link.patch
 URL:		http://lash.nongnu.org/
 BuildRequires:	/usr/bin/texi2html
