@@ -8,6 +8,7 @@ Group:		Applications/Sound
 Source0:	http://download.savannah.gnu.org/releases/lash/%{name}-%{version}.tar.gz
 # Source0-md5:	8eeb7e91f9127d7d9fc6ec076cbe14ed
 Patch0:		%{name}-link.patch
+Patch1:		%{name}-netdb.patch
 URL:		http://lash.nongnu.org/
 BuildRequires:	/usr/bin/texi2html
 BuildRequires:	alsa-lib-devel >= 0.9
@@ -101,6 +102,7 @@ Wiązania Pythona do biblioteki LASH.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -132,7 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README README.SECURITY TODO docs/lash-manual-html-split/lash-manual
+%doc AUTHORS ChangeLog NEWS README README.SECURITY TODO docs/lash-manual-html-split/lash-manual*
 %attr(755,root,root) %{_bindir}/lash_control
 %attr(755,root,root) %{_bindir}/lash_simple_client
 %attr(755,root,root) %{_bindir}/lash_synth
@@ -147,6 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/liblash.so.*.*.*
+%ghost %attr(755,root,root) %{_libdir}/liblash.so.1
 
 %files devel
 %defattr(644,root,root,755)
