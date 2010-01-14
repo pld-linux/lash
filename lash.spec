@@ -2,13 +2,13 @@ Summary:	LASH Audio Session Handler
 Summary(pl.UTF-8):	LASH Audio Session Handler - obsługa sesji dźwiękowych
 Name:		lash
 Version:	0.5.4
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://download.savannah.gnu.org/releases/lash/%{name}-%{version}.tar.gz
 # Source0-md5:	8eeb7e91f9127d7d9fc6ec076cbe14ed
 Patch0:		%{name}-link.patch
-Patch1:		%{name}-netdb.patch
+Patch1:		%{name}-glibc2.8.patch
 URL:		http://lash.nongnu.org/
 BuildRequires:	/usr/bin/texi2html
 BuildRequires:	alsa-lib-devel >= 0.9
@@ -102,7 +102,7 @@ Wiązania Pythona do biblioteki LASH.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+%patch1 -p0
 
 %build
 %{__libtoolize}
