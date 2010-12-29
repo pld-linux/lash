@@ -9,6 +9,7 @@ Source0:	http://download.savannah.gnu.org/releases/lash/%{name}-%{version}.tar.g
 # Source0-md5:	8eeb7e91f9127d7d9fc6ec076cbe14ed
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-glibc2.8.patch
+Patch2:		%{name}-swig2.patch
 URL:		http://lash.nongnu.org/
 BuildRequires:	/usr/bin/texi2html
 BuildRequires:	alsa-lib-devel >= 0.9
@@ -103,6 +104,7 @@ Wiązania Pythona do biblioteki LASH.
 %setup -q
 %patch0 -p1
 %patch1 -p0
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -124,7 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_postclean
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/_lash.{la,a}
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/_lash.{la,a}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
