@@ -1,0 +1,12 @@
+--- lash-0.5.4/liblash/lash.c~	2007-03-09 16:34:40.000000000 +0100
++++ lash-0.5.4/liblash/lash.c	2015-03-12 21:18:53.489824716 +0100
+@@ -34,6 +34,9 @@
+ #include <unistd.h>
+ #include <sys/param.h>
+ 
++#include <sys/time.h>
++#include <sys/resource.h>
++
+ #include <lash/lash.h>
+ #include <lash/internal_headers.h>
+ 
