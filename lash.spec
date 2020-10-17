@@ -29,7 +29,7 @@ BuildRequires:	python-devel
 BuildRequires:	readline-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
-BuildRequires:	swig-python >= 1.3.31
+BuildRequires:	swig3-python
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -120,7 +120,8 @@ Wiązania Pythona do biblioteki LASH.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	SWIG=/usr/bin/swig-3
 %{__make} \
 	pkgpyexecdir="\$(pyexecdir)"
 
