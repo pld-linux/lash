@@ -13,6 +13,7 @@ Patch2:		%{name}-swig2.patch
 Patch3:		texinfo5.patch
 Patch4:		rlimit.patch
 Patch5:		%{name}-swig3.patch
+Patch6:		%{name}-linking.patch
 URL:		http://lash.nongnu.org/
 BuildRequires:	/usr/bin/texi2html
 BuildRequires:	alsa-lib-devel >= 0.9
@@ -111,6 +112,7 @@ Wiązania Pythona do biblioteki LASH.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 %{__libtoolize}
